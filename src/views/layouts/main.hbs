@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Store </title>
+    <title>Tech Store</title>
     <link rel="stylesheet" href="/css/main.css">
     <script type="module" src="/js/main.js"></script>
 </head>
@@ -16,13 +16,13 @@
             <input type="checkbox" id="btn" class="nav__checkbox">
             <hr>
             <div class="nav__menu">
-                <a class="nav__anchor" href="./">
+                <a class="nav__anchor" href="/">
                     <span class="nav__anchor-txt">Home</span>
                     <img class="nav__anchor-icon" src="/icons/home.svg" alt="home">
                 </a>
-                 <a class="nav__anchor" href="./">
-                    <span class="nav__anchor-txt">Charts</span>
-                    <img class="nav__anchor-icon" src="/icons/chart.svg" alt="chart">
+                 <a class="nav__anchor" href="/cart">
+                    <span class="nav__anchor-txt">Cart</span>
+                    <img class="nav__anchor-icon" src="/icons/simple-cart.svg" alt="cart">
                 </a>
                 <a class="nav__anchor" href="./">
                     <span class="nav__anchor-txt">Contact us</span>
@@ -34,18 +34,25 @@
         <main class="main">
             <!-- Menu -->
             <header class="main__header">
-                <h2 class="main__title">TECH STORE</h2>
+                <h2 class="main__title"><a class="main__anchor" href="/">TECH STORE</a></h2>
                 <div class="main__cart">
                     <img src="/icons/cart.svg" alt="cart" class="main__icon-cart">
                     <div class="main__cart-items">
-                        <span class="main__cart-items-text">3</span>
+                        <span class="main__cart-items-text">0</span>
                     </div>
                 </div>
             </header>
             <!-- Content -->
-            <section class="main__sections">
-                {{{body}}}
-            </section>
+            {{#if pageHome  }}
+                <section class="main__sections">
+                    {{{ body }}}
+                </section>
+            {{else}}
+                <section class="main__sections main__sections-cart">
+                    {{{ body }}}
+                </section>
+            {{/if}}
+
             <!-- Footer -->
             <footer class="footer">
                 <a href="https://twitter.com/jaimeviloriogreen" target="_blank">

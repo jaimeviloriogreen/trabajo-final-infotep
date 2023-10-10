@@ -1,0 +1,22 @@
+<section class="carts">
+    {{#each rows}}
+            <article class="carts__card" data-id="{{this.producto_id}}">
+                <img class="carts__img" src="/img/{{this.imagen}}" alt="img-carts">
+                <div class="carts__text">
+                    <h2 class="carts__name"> {{ this.nombre_producto }} </h2>
+                    <p class="carts__price">US$ {{ this.precio }}</p>
+                    <div class="carts__btn">
+                        <button class="carts__mas">+</button>
+                        <input type="text" class="carts__input" value="1">
+                        <button class="carts__menos">-</button>
+                    </div>
+                    <a class="carts__eliminar" href="">Eliminar producto</a>
+                </div>
+            </article>
+    {{/each}}
+</section>
+<section class="pays">
+    <h2 class="pays__total">RD$ 1,200.00</h2>
+    <h5 class="pays__title">Gran Total</h5>
+    <button class="pays__btn">Proceder al pago</button>
+</section> 

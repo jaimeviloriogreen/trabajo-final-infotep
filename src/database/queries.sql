@@ -36,6 +36,12 @@ SELECT precio, producto_id
 FROM productos
 WHERE producto_id = 1;
 
+SELECT cantidad_producto, total_producto, producto_id,
+nombre_producto, precio, imagen, rating 
+FROM carritos 
+INNER JOIN productos 
+ON productos.producto_id = carritos.id_producto;
+
 -- Actualizar cantidad en el carrito
 
 UPDATE carritos

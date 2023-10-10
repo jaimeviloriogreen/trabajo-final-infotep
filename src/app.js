@@ -13,6 +13,7 @@ app.set('view engine', '.hbs');
 app.set('views', './src/views');
 
 app.use(express.static("./src/public"));
+app.use(express.json({"Content-Type":"application/json;charset=utf-8;"}))
 app.use(page); // Page Router
 
 app.listen(port, ()=> console.log(`Running on port ${port}`));
