@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Store </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+    <div class="content-page">
+        <nav class="nav">
+            <label for="btn" class="nav__btn">
+                <img class="nav__icon" src="/icons/menu-ham.svg" alt="">
+            </label>
+            <input type="checkbox" id="btn" class="nav__checkbox">
+            <hr>
+            <div class="nav__menu">
+                <a class="nav__anchor" href="./">
+                    <span class="nav__anchor-txt">Home</span>
+                    <img class="nav__anchor-icon" src="/icons/home.svg" alt="home">
+                </a>
+                 <a class="nav__anchor" href="./">
+                    <span class="nav__anchor-txt">Charts</span>
+                    <img class="nav__anchor-icon" src="/icons/chart.svg" alt="chart">
+                </a>
+                <a class="nav__anchor" href="./">
+                    <span class="nav__anchor-txt">Contact us</span>
+                    <img class="nav__anchor-icon" src="/icons/contact.svg" alt="contact">
+                </a>
+            </div>
+        </nav>
+
+        <main class="main">
+            <!-- Menu -->
+            <header class="main__header">
+                <h2 class="main__title">TECH STORE</h2>
+                <div class="main__cart">
+                    <img src="/icons/cart.svg" alt="cart" class="main__icon-cart">
+                    <div class="main__cart-items">
+                        <span class="main__cart-items-text">3</span>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <section class="main__sections">
+                {{{body}}}
+            </section>
+            <!-- Footer -->
+            <footer class="footer">
+                <a href="https://twitter.com/jaimeviloriogreen" target="_blank">
+                    <img src="/icons/twitter.svg" alt="twitter">
+                </a>
+
+                <a href="https://web.facebook.com/jaime.viloriogreen/" target="_blank">
+                    <img src="/icons/facebook.svg" alt="Facebook">
+                </a>
+
+                <a href="https://www.youtube.com/@jaimeviloriogreen" target="_blank">
+                    <img src="/icons/youtube.svg" alt="YouTube">
+                </a>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

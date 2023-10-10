@@ -1,0 +1,210 @@
+@import url("./bases.css");
+
+.content-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+}
+/*======== NAV ========*/
+.nav{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 0 1 5%;
+    min-width: 3.75rem;
+    background-color: var(--color12);
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-items: center;
+}
+hr{
+    width: 100%;
+    border-color: rgba(245, 245, 245, .25);
+}
+.nav__btn{
+    width: 2.5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.nav__icon{width: 100%; height: 100%;}
+
+.nav__checkbox:checked ~ .nav__menu{
+    transition: left 200ms ease-in;
+    position: absolute;
+    left: 0rem;
+}
+
+.nav__checkbox{display: none;}
+
+.nav__menu{
+    width: 12rem;
+    height: calc(100% - 3rem);
+    background-color: #343e46;
+    transition: left 200ms ease-out;
+    position: absolute;
+    top: calc(3rem + 1px);
+    left: -12rem;
+    box-shadow: 1px 0px .7px 1px rgba(105, 105, 105, 0.2);
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.nav__anchor{
+    text-decoration: none;
+    color: var(--color1);
+    border-bottom: 1px solid rgba(246, 245, 245, 0.25);
+    font-size: 1.0625rem;
+    padding: 1.25rem .5rem;
+    transition: background-color 200ms ease-in;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__anchor:hover{
+    background-color: rgb(51, 51, 51,.5);
+    transition: background-color 200ms ease-in;
+}
+.nav__anchor-icon{width: 1.25rem;}
+
+/*======== MAIN ========*/
+.main{flex: 0 1 95%;}
+.main__header{
+    padding: .5rem 2rem;
+    width: 100%;
+    height: calc(3rem + 1px);
+    background-color: var(--color1);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 1px 0px rgba(105, 105, 105, 0.2);
+}
+.main__title{
+    font-size: 1.125rem;
+    color: var(--color12);
+}
+.main__cart{
+    position: relative;
+}
+.main__icon-cart{width: 1.75rem;}
+.main__cart-items{
+    width: 1rem;
+    height: 1rem;
+    background-color: crimson;
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main__cart-items-text{
+    font-size: .75rem;
+    font-weight: 400;
+    color: var(--color1);
+}
+.main__sections{
+    width: calc(100% - 2rem);
+    height: calc(100% - 8rem);
+    margin: 1rem;
+}
+/* Main content */
+.main__content{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color1);
+    box-shadow: 0px 0px 1px 1px rgba(148, 147, 147, 0.4);
+    padding: 1.5rem;
+    border-radius: .125rem;
+    overflow: scroll;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+/* Footer */
+.footer{
+    width: 100%;
+    height: 3rem;
+    background-color: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 0px 1px 1px rgba(105, 105, 105, 0.2);
+    gap: 1rem;
+}
+
+/* Cards */
+.card{
+    width: 16rem;
+    height: 19rem;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 2px 0px rgba(105, 105, 105, .75);
+    border-radius: .25rem;
+}
+.card__container-img{
+    flex: 0 1 60%;
+}
+.card__img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius:.25rem;
+    border-top-right-radius:.25rem;
+    object-fit: cover;
+}
+
+.card__text{
+    flex: 0 1 40%;
+    padding: .5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: normal;
+    justify-content: space-around;
+}
+.card__title{
+    font-size: 1rem;
+    text-align: start;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.card__start-price{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card__starts{
+    flex: 0 1 60%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.card__price{flex: 0 1 40%; text-align: end;}
+.card__starts-icon{width: 1.0625rem;}
+.card__btn{
+    width: 100%;
+    height: 2.5rem;
+    border: none;
+    background-color: var(--color12);
+    border-radius: .25rem;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 300ms ease-in-out;
+}
+
+.card__btn:hover{
+    background-color: #242b31;
+    transition: background-color 300ms ease-in;
+}

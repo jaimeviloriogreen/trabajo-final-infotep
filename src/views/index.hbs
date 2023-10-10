@@ -1,0 +1,21 @@
+ <section class="main__content">
+    {{#each rows}}
+        <div class="card">
+            <section class="card__container-img">
+                <img src="/img/{{ this.imagen }}" alt="" class="card__img">
+            </section>
+            <section class="card__text">
+                <h2 class="card__title">{{ this.nombre_producto }}</h2>
+                <div class="card__start-price">
+                    <div class="card__starts">
+                        {{#each this.rating}}
+                            <img src="/icons/{{ this }}" alt="starts" class="card__starts-icon">
+                        {{/each}}
+                    </div>
+                    <p class="card__price">US$ {{ this.precio }}</p>
+                </div>
+                <button data-id="{{this.producto_id}}" class="card__btn">Buy</button>
+            </section>
+        </div>
+    {{/each}}
+</section>
