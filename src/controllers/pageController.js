@@ -8,6 +8,7 @@ const home = async (req = request, res = response)=>{
     const pageHome = true;
     const [rows, fields] = await conn.execute("SELECT * FROM productos");
     rows.forEach(product => product.rating = rating[product.rating])
+    
     res.render("index", { rows , pageHome });
 }
 const agregarCarrito = async (req = request, res = response)=>{
@@ -43,11 +44,36 @@ const cart = async (req = request, res = response)=>{
     res.render("cart", { rows });
 }
 
-
 const qtyCart = async (req = request, res = response)=>{
     const sql = "SELECT SUM(cantidad_producto) AS cantidad_productos FROM carritos;";
     const [[ cantidad_productos ], _ ] = await conn.execute(sql);
     res.json(cantidad_productos)
 }
 
-export { home, agregarCarrito, cart, qtyCart } 
+const actualizarProduct = async (req = request, res = response)=>{
+    const { qty, id } = req.body;
+
+    const sql = 
+        `UPDATE carritos
+        INNER JOIN productos
+            ON productos.producto_id = carritos.id_producto
+        SET cantidad_producto = ?,
+            total_producto = productos.precio * carritos.cantidad_producto
+        WHERE productos.producto_id = ?;`;
+
+    const [ ResultSetHeader ] = await conn.execute(sql, [ qty, id ]);
+    const { affectedRows } = ResultSetHeader;
+
+    res.json({affectedRows});
+}
+
+const totalAPagar = async (req = request, res = response )=>{
+    const sql = "SELECT SUM(total_producto) AS totalPagar FROM carritos;";
+    const [[ totalPagar ], _ ] = await conn.execute(sql);
+    
+    console.log(totalPagar);
+
+    res.json(totalPagar)
+}
+
+export { home, agregarCarrito, cart, qtyCart, actualizarProduct, totalAPagar } 

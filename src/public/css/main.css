@@ -265,7 +265,11 @@ hr{
 .carts__menos{
     width: 2rem;
     padding: .25rem;
+    text-align: center;
 }
+/* .carts__input{
+    
+} */
 .carts__mas, 
 .carts__menos{ cursor: pointer;}
 

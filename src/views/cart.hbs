@@ -7,7 +7,7 @@
                     <p class="carts__price">US$ {{ this.precio }}</p>
                     <div class="carts__btn">
                         <button class="carts__mas">+</button>
-                        <input type="text" class="carts__input" value="1">
+                        <input type="text" class="carts__input" value="{{this.cantidad_producto}}">
                         <button class="carts__menos">-</button>
                     </div>
                     <a class="carts__eliminar" href="">Eliminar producto</a>
@@ -16,7 +16,7 @@
     {{/each}}
 </section>
 <section class="pays">
-    <h2 class="pays__total">RD$ 1,200.00</h2>
+    <h2 class="pays__total">RD$ 0.00</h2>
     <h5 class="pays__title">Gran Total</h5>
     <button class="pays__btn">Proceder al pago</button>
 </section> 
